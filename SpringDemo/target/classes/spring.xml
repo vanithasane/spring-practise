@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!--  
+	<bean id="triangle" class="com.vanitha.spring.Triangle" >
+		<property name="pointA" ref="zeroPoint"/>
+		<property name="pointB" ref="point1"/>
+		<property name="pointC" ref="point2"/>
+	</bean>
+	-->
+<!--	<bean id="triangle" class="com.vanitha.spring.Triangle" >
+		<property name="points">
+		<list>
+			<ref bean="zeroPoint"/>
+			<ref bean="point1"/>
+			<ref bean="point2"/>
+		</list>
+		</property>
+	</bean>-->
+	<!-- Auto wiring -->
+	<bean id="triangle" class="com.vanitha.spring.Triangle" autowire="byName" />
+	<!--  <bean id="triangle" class="com.vanitha.spring.Triangle" autowire="byType" />
+	<bean id="triangle" class="com.vanitha.spring.Triangle" autowire="Constructor" />-->
+	<bean id="pointA" class="com.vanitha.spring.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="0"/>
+	</bean>
+	<bean id="pointB" class="com.vanitha.spring.Point">
+		<property name="x" value="20"/>
+		<property name="y" value="0"/>
+	</bean>
+	<bean id="pointC" class="com.vanitha.spring.Point">
+		<property name="x" value="0"/>
+		<property name="y" value="20"/>
+	</bean>
+	    <!-- setter injection -->
+		<!--property name="type" value="Equilateral" -->
+		<!-- constructor injetion -->
+		<!-- constructor-arg value="Equilateral" -->
+		<!-- constructor-arg type="int" value="20" -->
+		<!--  constructor-arg index="0" value="Equilateral"/>-->
+		<!--  <constructor-arg index="1"  value="20"/>-->
+</beans>
